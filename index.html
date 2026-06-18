@@ -186,6 +186,32 @@
             margin-top: 2px;
             text-align: center;
         }
+        .wechat-tip {
+            background: #fff8ef;
+            border: 1px solid #ffd591;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: #8c6a2a;
+            line-height: 1.8;
+            display: none;
+        }
+        .wechat-tip.show {
+            display: block;
+        }
+        .wechat-tip .tip-title {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #c47a12;
+        }
+        .wechat-tip .tip-steps {
+            padding-left: 0;
+            list-style: none;
+        }
+        .wechat-tip .tip-steps li {
+            padding: 2px 0;
+        }
         @media (max-width: 360px) {
             .header { padding: 28px 20px 24px; }
             .header .title { font-size: 22px; }
@@ -262,9 +288,26 @@
             </a>
             <div class="file-info">陕汽控股团联发〔2026〕2号</div>
 
+            <!-- WeChat Download Tip -->
+            <div class="wechat-tip" id="wechatTip">
+                <div class="tip-title">下载后温馨提示</div>
+                <ul class="tip-steps">
+                    <li>① 下载完成后，点击右上角 <b>「...」</b></li>
+                    <li>② 选择 <b>「发送给朋友」</b></li>
+                    <li>③ 发送至 <b>「文件传输助手」</b>，即可在电脑端查看编辑</li>
+                </ul>
+            </div>
+
         </div>
 
         <div class="footer">请使用 WPS Office 或 Microsoft Word 打开报名表</div>
     </div>
+    <script>
+        // Show wechat tip only on WeChat built-in browser
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('micromessenger') !== -1) {
+            document.getElementById('wechatTip').classList.add('show');
+        }
+    </script>
 </body>
 </html>
