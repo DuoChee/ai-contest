@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>陕汽控股 · AI智能体开发大赛报名表下载</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+            background: #f5f6f8;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            width: 100%;
+            max-width: 420px;
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #0f1a4a 0%, #1a3370 50%, #2247a0 100%);
+            padding: 40px 28px 36px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+        }
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0; right: 0;
+            height: 24px;
+            background: #fff;
+            border-radius: 24px 24px 0 0;
+        }
+        .header .brand {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 6px;
+            opacity: 0.8;
+            margin-bottom: 14px;
+        }
+        .header .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 20px;
+            padding: 4px 16px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+        .header .title {
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 1.4;
+        }
+        .header .slogan {
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.75;
+            margin-top: 10px;
+            letter-spacing: 2px;
+        }
+        .body {
+            padding: 28px 24px 32px;
+        }
+        .info-block {
+            background: #f8f9fb;
+            border-radius: 10px;
+            padding: 18px 16px;
+            margin-bottom: 20px;
+        }
+        .info-row {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 8px;
+            padding: 7px 0;
+            font-size: 14px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .info-row .label {
+            color: #999;
+            text-align: left;
+        }
+        .info-row .value {
+            color: #333;
+            font-weight: 500;
+        }
+        .highlight {
+            color: #c41e3a;
+            font-weight: 600;
+        }
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 20px 0;
+        }
+        .section-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 14px;
+            padding-left: 10px;
+            border-left: 3px solid #1a3370;
+        }
+        .stage-list {
+            margin-bottom: 16px;
+        }
+        .stage-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 6px 0;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .stage-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #1a3370;
+            flex-shrink: 0;
+            margin-top: 5px;
+        }
+        .btn-download {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 15px 24px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            margin-bottom: 12px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .btn-primary {
+            background: #1a3370;
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(26, 51, 112, 0.3);
+        }
+        .btn-primary:active {
+            background: #0f1a4a;
+            transform: scale(0.98);
+        }
+        .btn-secondary {
+            background: #fff;
+            color: #1a3370;
+            border: 1.5px solid #1a3370;
+        }
+        .btn-secondary:active {
+            background: #f0f3fa;
+            transform: scale(0.98);
+        }
+        .download-icon {
+            width: 20px;
+            height: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 0 24px 24px;
+            color: #bbb;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+        .file-info {
+            font-size: 12px;
+            color: #999;
+            margin-top: 2px;
+            text-align: center;
+        }
+        .contact-block {
+            background: #f8f9fb;
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin-top: 8px;
+            font-size: 13px;
+            color: #666;
+            line-height: 1.8;
+            text-align: center;
+        }
+        @media (max-width: 360px) {
+            .header { padding: 28px 20px 24px; }
+            .header .title { font-size: 22px; }
+            .body { padding: 20px 16px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Header -->
+        <div class="header">
+            <div class="brand">陕 汽 控 股</div>
+            <div class="badge">团 委 · 信 息 技 术 部</div>
+            <div class="title">AI 智能体开发大赛</div>
+            <div class="slogan">AI赋能业务 &nbsp; 智能驱动未来</div>
+        </div>
+
+        <!-- Body -->
+        <div class="body">
+            <div class="section-title">大赛信息</div>
+            <div class="info-block">
+                <div class="info-row">
+                    <span class="label">活动名称</span>
+                    <span class="value">大模型与AI能力培训<br>暨AI智能体开发大赛</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">主办单位</span>
+                    <span class="value">陕汽控股团委<br>陕汽控股信息技术部</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">报名截止</span>
+                    <span class="value highlight">2026年6月30日</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">组队方式</span>
+                    <span class="value">3-6人，业务+技术联合组队<br>含1名后备干部</span>
+                </div>
+            </div>
+
+            <div class="section-title">大赛阶段</div>
+            <div class="stage-list">
+                <div class="stage-item">
+                    <span class="stage-dot"></span>
+                    <span>通用培训 &amp; 战队组建（6月中旬—7月初）</span>
+                </div>
+                <div class="stage-item">
+                    <span class="stage-dot"></span>
+                    <span>专项培训 &amp; 实战开发（7月初—8月底）</span>
+                </div>
+                <div class="stage-item">
+                    <span class="stage-dot"></span>
+                    <span>项目评审 &amp; 转化推广（9月初—10月）</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Download Buttons -->
+            <a href="downloads/registration_form.docx" class="btn-download btn-primary" download="AI智能体开发大赛报名表.docx">
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                下载报名表（.docx）
+            </a>
+            <a href="downloads/notice.pdf" class="btn-download btn-secondary" download="AI智能体开发大赛通知.pdf">
+                <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                    <polyline points="7 10 12 15 17 10"/>
+                    <line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+                下载大赛通知（.pdf）
+            </a>
+            <div class="file-info">陕汽控股团联发〔2026〕2号</div>
+
+        </div>
+
+        <div class="footer">请使用 WPS Office 或 Microsoft Word 打开报名表</div>
+    </div>
+</body>
+</html>
